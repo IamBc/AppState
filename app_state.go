@@ -6,25 +6,34 @@ import  (
 	)
 
 func Hello(){
-    log.Println(`Hello from AppState`)
+    log.Println(`Hello from AppState`, int32(time.Now().Unix()))
 }
 
 type counter struct {
     value int
-    updated_at Time
+    updated_at time.Time
     updated_at_epoch int32 // int32(time.Now().Unix())
 }
 
 
 type flag struct {
     is_up bool
-    updated_at Time
+    updated_at time.Time
     updated_at_epoch int32 // int32(time.Now().Unix())
 }
 
-type state struct {
-    state int
-    updated_at Time
+type status struct {
+    status int
+    statusLabel string
+    updated_at time.Time
     updated_at_epoch int32 // int32(time.Now().Unix())
-    //TODO definition of different states
+    statusLabels map[int] string
 }
+
+type appState struct {
+    Counters map[string] counter
+    Flags map[string] flag
+    Statuses map[string] status
+    StatusFilePath string
+}
+
