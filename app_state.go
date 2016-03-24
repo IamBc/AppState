@@ -16,3 +16,9 @@ type counter struct {
 }
 
 
+type flag struct {
+    is_up bool
+    updated_at Time
+    updated_at_epoch int32 // int32(time.Now().Unix())
+}
+
