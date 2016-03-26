@@ -1,3 +1,3 @@
 # AppState
 
-A golang library that collects and dumps metrics for your application
+An extension of expvar which will offer extra statistics, such as initial update time, last update time and so on.
